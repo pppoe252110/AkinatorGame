@@ -7,14 +7,23 @@ using System;
 
 public class DataAnalyser : MonoBehaviour
 {
-    public string OPENROUTER_API_KEY = "";
+    public string OPENROUTER_API_KEY;
 
     [SerializeField] private UILogic _uiLogic;
 
+    public byte[] hidden;
     private OpenRouterApiClient client;
+    private void OnValidate()
+    {
+        if(!string.IsNullOrEmpty(OPENROUTER_API_KEY))
+        {
+            hidden = Encoding.UTF8.GetBytes(OPENROUTER_API_KEY);
+            OPENROUTER_API_KEY = string.Empty;
+        }
+    }
     private void OnEnable()
     {
-        client = new OpenRouterApiClient(OPENROUTER_API_KEY);
+        client = new OpenRouterApiClient(Encoding.UTF8.GetString(hidden));
         client.onError += OnError;
     }
 
