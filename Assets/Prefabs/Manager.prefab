@@ -49,16 +49,10 @@ MonoBehaviour:
   characters:
   - id: 0
     characterName: Artem
-    characterAttributes:
-    - it
-    - games
-    - penis
+    characterAttributes: 
   - id: 1
     characterName: Ann
-    characterAttributes:
-    - coffee
-    - funny
-    - vagina
+    characterAttributes: 
 --- !u!114 &5936476581833151931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,3 +100,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 489183b4b49ad4c4c9986a7774358ca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OPENROUTER_API_KEY: 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
+  _uiLogic: {fileID: 0}
